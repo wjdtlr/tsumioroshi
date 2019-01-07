@@ -1,0 +1,102 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+
+
+html{
+	position: relative;
+}
+
+
+html{
+	background: url(../images/department.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.search_top{
+	margin : 0 auto;
+	text-align: center;
+	width: 500PX;
+	height : 30px;
+	margin-top: 20px;
+	display: inherit;
+}
+
+#search{
+	margin : 0 auto;
+	text-align: center;
+	height : 32px;
+	border-radius: 2em;
+	margin-right: 30px;
+	border : 1px solid #A4A4A4;
+	padding-left: 10px;
+	padding-right: 10px;
+	background-color: #fff;
+}
+
+#search:hover{
+	cursor: pointer;
+	border: 1px solid #ff0000;
+}
+
+#product_name{
+	margin : 0 auto;
+	text-align: center;
+	height : 30px;
+	border-radius: 2em;
+	margin-left: 50px;
+	margin-right: 30px;
+	border : 1px solid #A4A4A4;
+}
+
+#items{
+	text-align: center;
+	width : 240px;
+	height : 30px;
+	border-radius: 2em;
+	margin-left: 5px;
+	margin-right: 10px;
+	border : 1px solid #A4A4A4;
+}
+
+
+.check{
+	text-align: center;
+	height : 30px;
+	border-radius: 2em;
+	margin-right: 5px;
+	border : 1px solid #A4A4A4;
+	padding-left: 5px;
+	padding-right: 5px;
+	background-color: #fff;
+}
+
+.check:hover{
+	cursor: pointer;
+	border: 1px solid #ff0000;
+}
+
+.main{
+	margin  : 0 auto;
+	background-color: rgba( 255, 255, 255, 0.8 );
+	padding : 5px;
+	padding-bottom : 10px;
+	padding-top : 10px;
+	margin-top: 30px;
+	margin-bottom: 10px;
+	width: 500px;
+	height: 400px;
+	border-radius: 2em;
+	overflow: scroll;
+}
+
+.main::-webkit-scrollbar{
+	display: none;
+}
+

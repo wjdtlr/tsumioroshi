@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="global.sesoc.tsumioroshi.dao.ProductMapper">
+
+<select parameterType="String" resultType="Product" id="select_Shelf_Product">
+select 
+product_Name, product_Number, tag_Number, quantity, expiration_Date, stock_Date, product_Location
+from PRODUCT
+where product_Location = #{shelf_Name} 
+ </select>
+ 
+<delete id="insert_Release_Log_Form_2" parameterType="Product" >
+	DELETE FROM product WHERE tag_Number = #{tag_Number}
+</delete>
+
+<insert id="insert_Stock_Log_Form_2" parameterType="Product" >
+insert into Product(
+	product_Name,
+	product_Number,
+	tag_Number,
+	quantity,
+	expiration_Date,
+	stock_Date,
+	product_Location
+)
+values(
+	#{product_Name},
+	#{product_Number},
+	#{tag_Number},
+	1,
+	#{expiration_Date},
+	sysdate,
+	#{product_Location}	
+)
+</insert>
+
+<select id="select_Every_Product_By_Num" parameterType="String" resultType="Product">
+	
+	select * from product where product_number = #{value} and quantity = 0
+	<!-- SELECT * FROM
+	(SELECT * FROM product WHERE product_Number=#{product_Number})
+	WHERE rownum <![CDATA[ <= ]]> #{delivery_Amount} -->
+</select>
+
+<select id="productCheck" parameterType="Product" resultType="Product" >
+	select product_name, max(product_number) product_number, max(tag_number) tag_number, max(quantity) quantity, max(EXPIRATION_DATE) EXPIRATION_DATE, max(STOCK_DATE) STOCK_DATE, max(PRODUCT_LOCATION) PRODUCT_LOCATION from product where product_name like '%'||#{product_Name}||'%' and quantity = 1 group by product_name
+</select>
+
+<select id="selectProductByName" parameterType="Product" resultType="Product" >
+	select * from product where product_name = #{product_Name} and quantity = 1
+</select>
+
+<update id="releaseRaedyProduct" parameterType="String">
+	update product set
+	quantity = 0 where product_number = #{value}
+</update>
+
+<select id="viewShelf" parameterType="String" resultType="Product">
+	select product_name, product_number, tag_number, quantity, to_char(expiration_date, 'yyyy-mm-dd') as expiration_date, to_char(stock_date, 'yyyy-mm-dd') as stock_date, product_location from product where product_location = #{value} order by stock_date desc
+</select>
+
+<select id="searchProductName" parameterType="map" resultType="Product">
+	select product_name, product_number, tag_number, quantity, to_char(expiration_date, 'yyyy-mm-dd') as expiration_date, to_char(stock_date, 'yyyy-mm-dd') as stock_date, product_location from product where product_name like '%'||#{pname}||'%' and quantity = 1<if test="#{date} != null"> and stock_date like '%'||#{date}||'%'</if> order by stock_date desc
+</select>
+
+<select id="searchProductNumber" parameterType="String" resultType="Product">
+	select product_name, product_number, tag_number, quantity, to_char(expiration_date, 'yyyy-mm-dd') as expiration_date, to_char(stock_date, 'yyyy-mm-dd') as stock_date, product_location from product where product_number like '%'||#{value}||'%' and quantity = 1 order by stock_date desc
+</select>
+
+<select id="select_Product_By_Tag" parameterType="String" resultType="Product">
+ 	SELECT * FROM product WHERE tag_Number = #{tag_Number}
+ </select>
+ 
+ <select id="select_Product_By_Name" resultType="Product">
+	SELECT DISTINCT pr1.PRODUCT_NAME as product_Name, pr1.PRODUCT_NUMBER as product_Number, pr2.QUANTITY as quantity, pr1.expiration_Date as expiration_Date, to_Char(pr1.stock_Date, 'yyyy-mm-dd') as stock_Date, pr1.product_Location as product_Location
+	FROM product pr1, (SELECT PRODUCT_NAME, count(*) as QUANTITY FROM product  group by PRODUCT_NAME) pr2
+	WHERE pr1.product_Name=pr2.product_Name
+ </select>
+ <select id="select_Product_By_Name2" resultType="Product" parameterType="map">
+	SELECT DISTINCT pr1.PRODUCT_NAME as product_Name, pr1.PRODUCT_NUMBER as product_Number, pr2.QUANTITY 
+	FROM product pr1, (SELECT PRODUCT_NAME, count(*) as QUANTITY FROM product group by PRODUCT_NAME) pr2
+	WHERE pr1.product_Name=pr2.product_Name
+	AND pr1.product_Name LIKE '%' ||#{product_Name} || '%' 
+ </select>
+ 
+</mapper>

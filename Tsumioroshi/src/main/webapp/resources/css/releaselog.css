@@ -1,0 +1,167 @@
+*{
+	margin: 0;
+}
+
+
+
+html{
+	position: relative;
+}
+
+
+html{
+	background: url(../images/order.png) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	font-family: 'Open Sans Condensed', sans-serif;
+}
+
+h2{
+	width: 250px;
+	margin : 0 auto;
+	text-align: center;
+	margin-top : 15px;
+	background-color: rgba( 255, 255, 255, 0.8 );
+	border-radius: 2em;
+}
+
+
+#form{
+	
+	margin-top : 15px;
+	
+	margin-left: 25px;
+	margin-right: 25px;
+	
+}
+
+.main{
+	margin  : 0 auto;
+	background-color: rgba( 255, 255, 255, 0.8 );
+	padding : 5px;
+	padding-bottom : 10px;
+	padding-top : 10px;
+	margin-top: 30px;
+	margin-bottom: 10px;
+	width: 500px;
+	height: 320px;
+	border-radius: 2em;
+}
+
+
+table{
+	margin: 0 auto;
+	border: 0px;
+	margin-top: 20px;
+}
+
+table th{
+	border-radius: 2em;
+	height: 25px;
+	width: 200px;
+	border: 0px;
+	
+}
+
+.title{
+	background-color: #fff;
+	border: 1px solid #6E6E6E;
+}
+
+.pn{
+	background-color: #fff;
+	border: 1px solid #6E6E6E;
+}
+
+.sc{
+	background-color: #fff;
+	border: 1px solid #6E6E6E;
+}
+
+.fc{
+	background-color: #fff;
+	border: 1px solid #6E6E6E;
+}
+
+.od{
+	background-color: #fff;
+	border: 1px solid #6E6E6E;
+}
+
+.dest{
+	background-color: #fff;
+	border: 1px solid #6E6E6E;
+}
+
+.da{
+	background-color: #fff;
+	border: 1px solid #6E6E6E;
+}
+
+.charge{
+	background-color: #fff;
+	border: 1px solid #6E6E6E;
+}
+
+table td{
+	border: 0px;
+}
+
+input{
+	border-radius: 2em;
+	width: 172px;
+	height: 25px;
+	margin-left: 15px;
+	text-align: center;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	border: 1px solid #6E6E6E;
+}
+
+#order_Date{
+	text-align: right;
+}
+
+.bot{ 
+	border : 0px;
+	}
+
+
+.bottom{
+	width: 100px;
+	margin-top : 15px;
+	margin-left : 30px;
+	background-color: #fff;
+}
+
+.bottom:hover{
+	cursor: pointer;
+	color : #B40431;
+	border: 1px dashed #ff0000;
+}
+
+#checkpro{
+	width: 40px;
+	background-color: #fff;
+}
+
+#checkpro:hover{
+	cursor: pointer;
+	color : #B40431;
+	border: 1px dashed #ff0000;
+}
+
+.bott{
+	text-align : center;
+	margin : 0 auto;
+	margin-top: 20px;
+}
+
+.bt{
+	margin : 0 auto;
+	text-align : center;
+	display: flex;
+	width: 300px;
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias type="global.sesoc.tsumioroshi.vo.Release_Log" alias="Release"/>
+		<typeAlias type="global.sesoc.tsumioroshi.vo.Stock_Log" alias="Stock"/>
+		<typeAlias type="global.sesoc.tsumioroshi.vo.FirstCategory" alias="FirstCategory"/>
+		<typeAlias type="global.sesoc.tsumioroshi.vo.SecondCategory" alias="SecondCategory"/>
+		<typeAlias type="global.sesoc.tsumioroshi.vo.Members" alias="Members"/>
+    	<typeAlias type="global.sesoc.tsumioroshi.vo.Shelf" alias="Shelf"/>
+		<typeAlias type="global.sesoc.tsumioroshi.vo.Product" alias="Product"/>
+		<typeAlias type="global.sesoc.tsumioroshi.vo.Message" alias="Message"/>
+	</typeAliases>
+	
+	<mappers>
+		<mapper resource="mappers/CategoriesMapper.xml" />
+		<mapper resource="mappers/logMapper.xml" />
+		<mapper resource="mappers/MemberMapper.xml" />
+		<mapper resource="mappers/shelfMapper.xml" />
+		<mapper resource="mappers/productMapper.xml" />
+		<mapper resource="mappers/MessageMapper.xml" />
+	</mappers>
+</configuration>

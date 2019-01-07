@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="global.sesoc.tsumioroshi.dao.MessageMapper">
+	<insert id="insertMessage" parameterType="Message">
+		insert into message
+		<if test="user_to == null">
+			(message_no, id, password, title, regdate, content, user_to)
+			values
+			(message_seq.nextval, #{id}, #{password}, #{title}, sysdate, #{content}, 'all' )
+		</if>
+		<if test="user_to != null">
+			(message_no, id, password, title, regdate, content, user_to)
+			values
+			(message_seq.nextval, #{id}, #{password}, #{title}, sysdate, #{content}, #{user_to} )
+		</if>
+	</insert>
+	
+	<delete id="deleteMessage" parameterType="Int">
+		delete from message where message_no = #{value}
+	</delete>
+	
+	<select id="selectTen" resultType="Message" parameterType="map">
+		select message_no, id, password, title, regdate, content, confirm, user_to, confirm_date 
+	    from 
+	    (
+	        select rownum rnum , message_no, id, password, title, to_char(regdate, 'yyyy/mm/dd hh24:mi:ss') as regdate, content, confirm, user_to, to_char(confirm_date, 'yyyy/mm/dd hh24:mi:ss') as confirm_date 
+	        from message 
+	        where 
+	        <if test="id == ''">
+	       		user_to = #{userto}
+	        </if>
+	        <if test="userto == ''">
+	        	id= #{id} and user_to != 'all'
+	        </if>
+	        order by message_no desc
+	    ) 
+		where rnum between #{start} and #{end} 
+	</select>
+	
+	<select id="pageCount" parameterType="map" resultType="int">
+		select count(*) from message 
+		where 
+		<if test="id == ''">
+	       	user_to = #{userto}
+	    </if>
+	    <if test="userto == ''">
+	        id= #{id}
+	    </if>
+	</select>
+	
+	<select id="selectOne" parameterType="String" resultType="Message"> 
+		select  message_no, id, password, title, to_char(regdate, 'yyyy/mm/dd hh24:mi:ss') as regdate, content, confirm, user_to, to_char(confirm_date, 'yyyy/mm/dd hh24:mi:ss') as confirm_date 
+		from message where message_no = #{message_no}
+	</select>
+	
+	<update id="updateMessage" parameterType="Message">
+		update message set title = #{title}, user_to = #{user_to}, content = #{content} where message_no = #{message_no} and id = #{id} and password = #{password}
+	</update>
+	
+	<update id="confirmMessage" parameterType="Message">
+		update message set confirm = #{confirm}, confirm_date = sysdate where message_no = #{message_no}
+	</update>
+	
+</mapper>

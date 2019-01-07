@@ -1,0 +1,47 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+
+
+html{
+	position: relative;
+}
+
+
+html{
+	background: url(../images/excel.png) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.main{
+	position : relative;
+	margin: 0 auto;
+	text-align: center;
+	width: 300px;
+	height: 180px;
+}
+
+#btn{
+	position: absolute;
+	bottom: -5%;
+    right: -7%;
+    background-color : #fff;
+	border-radius: 2em;
+	padding-left:5px;
+	padding-right: 5px;
+	border : 1px solid #04B404;
+}
+
+#btn:hover{
+	cursor: pointer;
+	background-color: rgba( 255, 255, 255, 0.8 );
+}
+
+
+

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="global.sesoc.tsumioroshi.dao.ShelfMapper">
+
+<select parameterType="String" resultType="Shelf" id="select_Shelf">
+select 
+shelf_Name, shelf_Size, shelf_Location, shelf_Condition
+from SHELF
+where shelf_Name = #{shelf_Name} 
+ </select>
+ 
+ <select resultType="Shelf" id="select_Every_Shelves">
+ select
+ *
+ from SHELF
+ order by shelf_name asc
+ </select>
+ 
+ <insert id="insertSelves" parameterType="Shelf">
+ 	insert into shelf (shelf_name, shelf_size, shelf_condition) values (#{shelf_Name}, #{shelf_Size}, '1')
+ </insert>
+ 
+<update id="updateShelves" parameterType="Shelf">
+ 	update shelf set 
+ 		shelf_size = #{shelf_Size},
+ 		shelf_location = #{shelf_Location}
+ 	where 
+ 		shelf_name = #{shelf_Name}
+ </update>
+ 
+ <delete id="deleteBox" parameterType="String">
+ 	delete from shelf where shelf_name = #{value}
+ </delete>
+
+<!-- 검색 기능 구현해야함  이름 / 컨디션  / 태그-->
+
+</mapper>

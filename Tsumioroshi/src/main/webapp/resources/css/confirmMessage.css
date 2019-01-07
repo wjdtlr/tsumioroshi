@@ -1,0 +1,72 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+
+
+html{
+	position: relative;
+}
+
+
+html{
+	background: url(../images/write.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.main{
+	position : relative;
+	margin : 0 auto;
+	margin-top : 15px;
+	width: 250px;
+	height: 170px;
+	text-align : center;
+	background-color: rgba( 255, 255, 255, 0.9 );
+	border-radius : 2em;
+}
+
+.kakuninsya{
+	position: relative;
+}
+
+.ango{
+	margin-top: 12px;
+}
+
+#confirm{
+	background-color: #fff;
+	border: 1px solid #F6CECE;
+	border-radius: 2em;
+	text-align: center;
+}
+
+#confirmpwd{
+	background-color: #fff;
+	border: 1px solid #F6CECE;
+	border-radius: 2em;
+	text-align: center;
+}
+
+#confirmMessage{
+    width: 100px;
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 2em;
+    border: 1px solid #F6CECE;
+}
+
+#confirmMessage:hover{
+	background-color: #F6CECE;
+	color : #000;
+	
+}

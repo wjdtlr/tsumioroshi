@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="global.sesoc.tsumioroshi.dao.CategoriesMapper">
+	<select id="selectAllFirst" resultType="FirstCategory">
+		select * from first_category order by fc_code asc
+	</select>
+	
+	<select id="selectSecond" resultType="SecondCategory">
+		select * from second_category
+	</select>
+	
+	<select id="selectByCodeFirst" parameterType="String" resultType="String">
+		select fc_name from first_category where fc_code = #{value}
+	</select>
+	
+	<select id="selectByNameFirst" parameterType="FirstCategory" resultType="FirstCategory">
+		select * from first_category where fc_name = #{fc_name}
+	</select>
+	
+	<select id="selectByFcCodeSecond" parameterType="SecondCategory" resultType="SecondCategory">
+		select * from second_category where fc_code = #{fc_code}
+	</select>
+	
+	<select id="selectByNameSecond" parameterType="SecondCategory" resultType="SecondCategory">
+		select * from second_category where sc_name = #{sc_name} and fc_code = #{fc_code}
+	</select>
+	
+	<select id="selectByCodeSecond" parameterType="map" resultType="String">
+		select sc_name from second_category where sc_code = #{sc_code} and fc_code = #{fc_code}
+	</select>
+	
+	<select id="selectLastFirst" resultType="FirstCategory">
+		select rownum as rnum, fc_code, fc_name
+		from (select a.* from first_category a order by a.fc_code desc)
+		where rownum =1
+	</select>
+	
+	<select id="selectLastSecond" parameterType="SecondCategory" resultType="SecondCategory">
+		select rownum as rnum, fc_code, sc_name, sc_code
+		from (select a.* from second_category a where a.fc_code = #{fc_code} order by a. sc_code desc)
+		where rownum =1
+	</select>
+	
+	<select id="countFirst" resultType="Int">
+		select count(*) as count from first_category 
+	</select>
+	
+	<select id="countSecond" resultType="Int">
+		select count(*) as count from second_category
+	</select>
+	
+	<insert id="insertFirst" parameterType="FirstCategory">
+		insert into first_category (fc_code, fc_name) values (#{fc_code}, #{fc_name})
+	</insert>
+	
+	<insert id="insertSecond" parameterType="SecondCategory">
+		insert into second_category (fc_code, sc_code, sc_name) values (#{fc_code}, #{sc_code}, #{sc_name})
+	</insert>
+	
+	<delete id="deleteFirst" parameterType="FirstCategory">
+		delete first_category where fc_code = #{fc_code}
+	</delete>
+	
+	<delete id="initSecond" parameterType="FirstCategory">
+		delete second_category where fc_code = #{fc_code}
+	</delete>
+	
+	<delete id="deleteSecond" parameterType="SecondCategory">
+		delete second_category where sc_code = #{sc_code}
+	</delete>
+	
+</mapper>

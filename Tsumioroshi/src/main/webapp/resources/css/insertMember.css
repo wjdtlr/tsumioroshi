@@ -1,0 +1,74 @@
+html{
+	background: url(../images/memberlist_bk.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.main{
+	margin: 0 auto;
+	width: 500px;
+	height: 350px;
+	text-align : center;
+	padding : 2px;
+	padding-bottom : 15px;
+	background-color: rgba( 255, 255, 255, 0.9 );
+	border-radius : 2em;
+}
+
+.marg{
+	margin: 5px;
+	padding: 5px;
+	font-size: 12px;
+}
+
+p{
+	font-weight: bold;
+}
+
+.ipt{
+	width: 170px; height: 25px;
+	border-radius : 2em;
+	text-align: center;
+}
+
+.ipt2{
+	width: 170px; height: 25px;
+	border-radius : 2em;
+	text-align: center;
+	
+}
+
+#userauth{
+	width: 170px;
+	height: 25px;
+	border-radius : 2em;
+	text-align: center;
+}
+
+.yuhyo{
+	margin-top: 25px;
+	border-radius : 2em;
+	text-align: center;
+}
+
+.bot{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+
+#create{
+	border-radius: 2em;
+	margin: 0 auto;
+	text-align : center;
+	margin-top: 30px;
+	background-color: #fff;
+}
+
+.resulttext{
+	height: 20px;
+	display: inline-block;
+}

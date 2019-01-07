@@ -1,0 +1,140 @@
+html{
+	background: url(../images/insertmebk.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	font-family: 'Open Sans Condensed', sans-serif;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+
+.main{
+	position : relative;
+	text-align : center;
+	margin : 0 auto;
+	margin-top : 20px;
+	width: 550px;
+	height: 350px;
+}
+
+.top{
+	display: flex;
+	margin-bottom: 30px;
+	margin-top: 30px;
+}
+
+.naiyou{
+	margin : 0 auto;
+	margin-bottom: 15px;
+	border-radius: 2em;
+	background-color: #000000;
+	color : #fff;
+	border : 1px solid #ff0000;
+	width: 100px;
+    margin-left: 35px;
+    padding-bottom: 2px;
+	
+}
+
+
+.head{
+	margin : 0 auto;
+	text-align : center;
+	background-color: #000000;
+	color : #fff;
+	padding-left: 8px;
+	padding-right: 8px;
+	margin-right: 0px;
+    margin-left: 35px;
+	border-top : 2px  solid #ff0000;
+	border-bottom : 2px  solid #ff0000;
+    border-top-left-radius: 2em;
+	border-bottom-left-radius: 2em;
+}
+
+#title{
+	text-align: center;
+	background-color: #fff;
+	border: 0px;
+	border-top : 2px  solid #ff0000;
+	border-bottom : 2px  solid #ff0000;
+	border-top-right-radius: 2em;
+	border-bottom-right-radius: 2em;
+	
+}
+
+#userto{
+	text-align: center;
+	background-color: #fff;
+	border: 0px;
+	border-top : 2px  solid #ff0000;
+	border-bottom : 2px  solid #ff0000;
+}
+
+#usersearch{
+	text-align: center;
+	background-color: #fff;
+	border: 0px;
+	width: 100px;
+	border-top-right-radius: 2em;
+	border-bottom-right-radius: 2em;
+	border-top : 2px  solid #ff0000;
+	border-bottom : 2px  solid #ff0000;
+}
+
+
+#content{
+	margin: 0 auto;
+	border: 0px;
+	padding: 10px;
+	border-radius: 2em;
+	
+	}
+
+	
+#insertMessage{
+	position: absolute;
+	bottom: 2%;
+	right: 4%;
+	width: 100px;
+	height : 30px;
+	border-radius: 2em;
+	background-color: #fff;
+	border: 0px;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+
+#insertMessage:hover{
+	cursor: pointer;
+	color: #ff0000;
+}
+
+
+.exit{
+	position : absolute;
+	text-decoration: none;
+	color: #ff0000;
+	font-size: 20px;
+	top: -100%;
+    right: -7%;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out; 
+}
+
+.exit:hover{
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	transform: rotate(180deg);
+}

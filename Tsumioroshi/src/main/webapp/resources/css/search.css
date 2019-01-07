@@ -1,0 +1,243 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+
+
+html{
+	position: relative;
+}
+
+
+html{
+	background: url(../images/worh.png) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	font-family: 'Open Sans Condensed', sans-serif;
+}
+
+#category{
+	position : absolute;
+	top: 3%;
+    left: 25%;
+	text-align : center;
+	width:68px;height:57px;
+    font-size:14px;
+    border:1px solid #ccc;
+	background-color:#fff;
+	appearance:none;
+	-webkit-appearance:none;
+    -moz-appearance:none;
+    -o-appearance:none;
+	margin-left: 10px;
+	border: 1px solid #848484;   
+}
+
+.main{
+	position : relative;
+	width: 1200px;
+	height: 400px;
+	margin  : 0 auto;
+	background-color: rgba( 255, 255, 255, 0.8 );
+	padding : 5px;
+	padding-bottom : 10px;
+	padding-top : 10px;
+	margin-top: 30px;
+	margin-bottom: 10px;
+	border-radius: 2em;
+}
+
+#product_Name{
+	position: absolute;
+	top: 3%;
+    left: 34%;
+    border-radius: 2em;
+    border: 1px solid #848484;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+}
+
+#date_Select_Input{
+	position: absolute;
+	top: 12%;
+    left: 34%;
+    border-radius: 2em;
+    border: 1px solid #848484;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+}
+
+#month_Input{
+	position: absolute;
+    top: 11%;
+    left: 46%;
+    border-radius: 2em;
+    border: 1px solid #848484;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+}
+
+#year_Input{
+	position: absolute;
+    top: 4px;
+    left: 46%;
+    border-radius: 2em;
+    border: 1px solid #848484;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+}
+
+#date_Set{
+	position: absolute;
+    top: 11%;
+    left: 46%;
+    border-radius: 2em;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+}
+
+
+#start_Date{
+	border-radius: 2em;
+    border: 1px solid #848484;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+}
+
+#end_Date{
+	border-radius: 2em;
+    border: 1px solid #848484;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+}
+
+#submit_Btn{
+	position: absolute;
+    bottom: 2%;
+    left: 88%;
+    width: 100px;
+    background-color: #fff;
+    color: #000;
+    padding: 15px 0;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px;
+    cursor: pointer;
+    border-radius: 2em;
+    border: 1px solid #848484;
+}
+
+.btns{
+	position: relative;
+    bottom: 2%;
+    left: 77%;
+    width: 100px;
+    background-color: #fff;
+    color: #000;
+    padding: 15px 0;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px;
+    cursor: pointer;
+    border-radius: 2em;
+    border: 1px solid #848484;
+}
+
+
+
+#submit_Btn:hover{
+	background-color: #f8585b;
+	color : #fff;
+	
+}
+
+
+.tables{
+	position: absolute;
+	top: 21%;
+	left: -1px;
+	text-align: center;
+}
+
+th{
+	background-color: #fff;
+	border: 1px solid #F6CECE;
+	border-radius: 2em;
+	font-size: 13px;
+}
+
+td{
+	background-color: #fff;
+	border: 1px solid #6E6E6E;
+	border-radius: 2em;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: 13px;
+}
+
+.na{
+	width: 83px;
+	
+}
+
+.na{
+	width: 108px;
+}
+.num{
+	width: 74px;
+}
+.cnum{
+	width: 90px;
+}
+.judate{
+	width: 171px;
+}
+.gidate{
+	width: 200px;
+}
+.spot{
+	width: 61px;
+}
+.ryo{
+	width: 61px;
+}
+.kakunin{
+	width: 118px;
+}
+.kakunin2{
+	width: 118px;
+}
+.finaldate{
+	width: 200px;
+}
+
+
+.title{
+	position: absolute;
+	top: 11px;
+    left: 25px;
+	font-size: 45px;
+}
+
+#result{
+	height: 340px;
+	overflow: scroll;
+}
+
+#result::-webkit-scrollbar{
+	display: none;
+}

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="global.sesoc.tsumioroshi.dao.LogMapper">
+<insert id ="insert_Release_Log_1" parameterType="Release">
+insert into Release_Log(
+	product_Name,
+	product_Number,
+	order_Number,
+	order_Date,
+	destination,
+	delivery_Amount,
+	charge1	
+)
+values
+(
+	#{product_Name},
+	#{product_Number},
+	release_seq.nextval,
+	#{order_Date},
+	#{destination},
+	#{delivery_Amount},
+	#{charge1}	
+)
+</insert>
+
+<insert id ="insert_Stock_Log_1" parameterType="Stock">
+insert into Stock_Log(
+	product_Name,
+	product_Number,
+	order_Number,
+	order_Date,
+	departure,
+	stock_Amount,
+	charge1	
+)
+values
+(
+	#{product_Name},
+	#{product_Number},
+	stock_seq.nextval,
+	#{order_Date},
+	#{departure},
+	#{stock_Amount},
+	#{charge1}	
+)
+</insert>
+
+<select resultType="Release" id="select_Every_Release_Log">
+select
+order_Number,
+TO_CHAR(order_Date, 'YYYY-MM-DD') as order_Date,
+charge1,
+charge2
+from release_Log
+order by order_Number desc
+</select>
+
+<select resultType="Stock" id="select_Every_Stock_Log">
+select
+order_Number,
+TO_CHAR(order_Date, 'YYYY-MM-DD') as order_Date,
+charge1,
+charge2
+from stock_Log
+order by order_Number desc
+</select>
+ 
+<select parameterType="int" resultType="Release" id="select_Release_Log_By_Num">
+select
+product_Name,
+product_Number,
+order_Number,
+TO_CHAR(order_Date, 'YYYY-MM-DD') as order_Date,
+log_Date,
+destination,
+delivery_Amount,
+charge1,
+charge2,
+confirm_Date
+from release_Log
+where order_Number = #{order_Number}
+</select>
+
+<select parameterType="int" resultType="Stock" id="select_Stock_Log_By_Num">
+select
+product_Name,
+product_Number,
+order_Number,
+TO_CHAR(order_Date, 'YYYY-MM-DD') as order_Date,
+log_Date,
+departure,
+stock_Amount,
+charge1,
+charge2,
+confirm_Date
+from stock_Log
+where order_Number = #{order_Number}
+</select>
+
+<select parameterType="String" resultType="Release" id="select_Release_Log_By_P_Num">
+select
+product_Name,
+product_Number,
+order_Number,
+delivery_Amount,
+from release_Log
+where product_Number = #{product_Number}
+</select>
+
+<select parameterType="String" resultType="Stock" id="select_Stock_Log_By_P_Num">
+select
+*
+from stock_Log
+where product_Number = #{value}
+</select>
+
+<update id="update_Stock_Log_Charge2" parameterType="map">
+ 	UPDATE stock_log SET charge2 = #{charge2} WHERE order_Number = #{order_Number}
+ </update>
+ 
+  <update id="update_Release_Log_Charge2" parameterType="map">
+ 	UPDATE release_log SET charge2 = #{charge2} WHERE order_Number = #{order_Number}
+ </update>
+ 
+ <select id="search_Release_Log" parameterType="map" resultType="Release">
+	select
+		product_Name,
+		product_Number,
+		order_Number,
+		TO_CHAR(order_Date, 'YYYY-MM-DD') as order_Date,
+		log_Date,
+		destination,
+		delivery_Amount,
+		charge1,
+		charge2,
+		confirm_Date
+	from release_Log
+	WHERE product_Name LIKE '%' || #{product_Name} || '%'
+	<if test="year_Input!=null">
+		AND TO_CHAR(order_Date, 'YYYY')=#{year_Input}
+	</if>
+	<if test="month_Input!=null">
+		AND TO_CHAR(order_Date, 'YYYY-MM')=#{month_Input}
+	</if>
+	<if test="start_Date!=null">
+		AND order_Date between #{start_Date} and #{end_Date}
+	</if>
+</select>
+
+<select id="search_Stock_Log" parameterType="map" resultType="Stock">
+	select
+		product_Name,
+		product_Number,
+		order_Number,
+		TO_CHAR(order_Date, 'YYYY-MM-DD') as order_Date,
+		log_Date,
+		departure,
+		stock_Amount,
+		charge1,
+		charge2,
+		confirm_Date
+	from stock_Log
+	WHERE product_Name LIKE '%' || #{product_Name} || '%'
+	<if test="year_Input!=null">
+		AND TO_CHAR(order_Date, 'YYYY')=#{year_Input}
+	</if>
+	<if test="month_Input!=null">
+		AND TO_CHAR(order_Date, 'YYYY-MM')=#{month_Input}
+	</if>
+	<if test="start_Date!=null">
+		AND order_Date between #{start_Date} and #{end_Date}
+	</if>
+		
+</select>
+
+<select id="searchStockByName" parameterType="String" resultType="Stock">
+	select
+		product_Name,
+		product_Number,
+		order_Number,
+		TO_CHAR(order_Date, 'YYYY-MM-DD') as order_Date,
+		log_Date,
+		departure,
+		stock_Amount,
+		charge1,
+		charge2,
+		confirm_Date
+	from stock_Log
+	where product_Name = #{value}
+</select>
+
+<select id="lastStockNumber" parameterType="String" resultType="Stock">
+	select
+		product_Name,
+		product_Number,
+		order_Number,
+		TO_CHAR(order_Date, 'YYYY-MM-DD') as order_Date,
+		log_Date,
+		departure,
+		stock_Amount,
+		charge1,
+		charge2,
+		confirm_Date
+	from stock_Log
+	where product_number LIKE #{value} || '%'
+	order by product_number desc
+</select>
+
+</mapper>

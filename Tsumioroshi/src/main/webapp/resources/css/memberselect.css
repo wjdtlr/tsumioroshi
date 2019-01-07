@@ -1,0 +1,91 @@
+html{
+	background: url(../images/memberlist_bk.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.main{
+	margin : 0 auto;
+	margin-top : 15px;
+	width: 600px;
+	height: 200px;
+	text-align : center;
+	background-color: rgba( 255, 255, 255, 0.9 );
+	border-radius : 2em;
+	overflow: scroll;
+}
+
+.main::-webkit-scrollbar{
+	display: none;
+}
+
+table{
+	border : 0px;
+	font-size: 13px;
+	margin-top: 20px;
+}
+
+th{
+	border-radius: 2em;
+	width: 60px;
+	color: red;
+	background-color: #fff;
+	border : 0px;
+	
+}
+
+td{
+	border : 0px;
+	border-radius: 2em;
+	background-color: #fff;
+}
+
+h3{
+	text-align: center;
+	margin: 0px;
+	margin-left: 20px;
+}
+
+h2{
+	margin: 0 auto;
+	text-align: center;	
+	font-size: 25px;
+	width: 150px;
+	border-radius : 2em;
+	background-color: rgba( 255, 255, 255, 0.7 );
+	padding: 2px;
+}
+
+.remove{
+	border-radius: 1em;
+	background-color: #fff;
+}
+
+.create{
+	border-radius: 2em;
+	margin: 0 auto;
+	text-align : center;
+	margin-top: 10px;
+	display: table;
+	background-color: #fff;
+	border: 0px;
+}
+
+.top{
+	display: flex;
+}
+
+.left-div {
+	float: left;
+	width: 50%;
+	margin-left: 28px;
+}
+
+.right-div {
+	float: right;
+	width: 50%;
+	
+}
